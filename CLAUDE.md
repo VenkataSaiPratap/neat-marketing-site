@@ -6,9 +6,12 @@
 Marketing website for **Filostech** (brand name in code) — a GCC (Global Capability Center) and Fractional Leadership company. Single-page scroll with 13 content sections + Navbar + Footer.
 
 ## Stack
-- **Next.js 16.2.9** — App Router, Turbopack, static export (`output: 'export'`)
+- **Next.js 16.2.9** — App Router, Turbopack (no `output: 'export'` — standard server build)
 - **TailwindCSS v4** — `@import "tailwindcss"` in globals.css; `@theme inline {}` for design tokens; **NO tailwind.config.ts**
 - **Framer Motion** — all animations and scroll effects
+- **GSAP + @gsap/react** — installed (`^3.15.0` / `^2.1.2`) but not yet used in components
+- **Radix UI** — `@radix-ui/react-accordion`, `@radix-ui/react-dialog`, `@radix-ui/react-slider` installed but not yet wired up (components use custom implementations)
+- **clsx + tailwind-merge + class-variance-authority** — utility packages available for conditional classnames
 - **Lucide React** — icons only (note: `Twitter`, `Linkedin`, `Github` icons do NOT exist in this version — use `Globe`, `Share2`, `ExternalLink` instead)
 - **TypeScript** — strict mode
 
@@ -41,6 +44,7 @@ src/
       Testimonials.tsx
       FAQ.tsx
       FinalCTA.tsx
+    ui/                      ← empty placeholder (reserved for shadcn/ui components)
 ```
 
 ## Design system — Sophisticated Navy (dark mode)
@@ -105,7 +109,7 @@ Use inline `style={{ background: "radial-gradient(circle, rgba(56,189,248,0.06) 
 Custom hook in Hero.tsx that animates numbers on scroll. Used for metrics bar (e.g. "150+ Engineers", "40% Cost Savings").
 
 ### Marquee (TrustedBy)
-CSS `@keyframes marquee` in globals.css with `animation: marquee 30s linear infinite`. Fade edges use `from-[#0B1525]` to match section bg.
+Framer Motion `animate={{ x: ["0%", "-50%"] }}` with `transition={{ duration: 30, repeat: Infinity, ease: "linear" }}` — **not** a CSS keyframe. Logos are duplicated in the JSX so the loop is seamless. Fade edges use `from-[#0B1525]` to match section bg.
 
 ### Tab selector (FractionalLeadership, CaseStudies)
 Active tab uses role/case-specific color border + bg. Pattern: `active === i ? "border-[color]/40 bg-[color]/10" : "border-white/[0.06] bg-white/[0.03]"`.

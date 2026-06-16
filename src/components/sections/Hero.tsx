@@ -5,9 +5,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 const metrics = [
-  { value: 120, suffix: "+", label: "Products Delivered" },
-  { value: 500, suffix: "+", label: "Engineers Available" },
-  { value: 18, suffix: "", label: "Industries Served" },
+  { value: 3, suffix: "", label: "Products Delivered" },
+  { value: 20, suffix: "+", label: "Engineers Available" },
+  { value: 3, suffix: "", label: "Industries Served" },
   { value: 60, suffix: "%", label: "Cost Savings" },
 ];
 

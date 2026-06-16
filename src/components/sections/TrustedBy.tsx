@@ -3,14 +3,11 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  { name: "Acme Corp", abbr: "ACME" },
-  { name: "Nexus Health", abbr: "NHS" },
-  { name: "TerraFlow", abbr: "TF" },
-  { name: "Vertex Capital", abbr: "VC" },
-  { name: "Luminary AI", abbr: "LAI" },
-  { name: "Orion Logistics", abbr: "OL" },
-  { name: "Prism Retail", abbr: "PR" },
-  { name: "Apex Fintech", abbr: "AF" },
+  { name: "Total Health And Fitness", abbr: "TH" },
+  { name: "Decisive Investment", abbr: "DI" },
+  { name: "BYU Athletics", abbr: "BYU" },
+  { name: "NorthSlope Chillers", abbr: "NS" },
+  { name: "PFC", abbr: "PFC" },
 ];
 
 const testimonials = [
